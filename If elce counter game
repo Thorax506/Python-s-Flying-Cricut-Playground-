@@ -1,0 +1,20 @@
+def main():
+    print("Starting Code Challenge")
+    # Print The User Input
+    ssn_user = input("enter a number from 0->9 ")
+    ssn_user = int(ssn_user)
+    print(ssn_user)
+    
+    print("Starting While Loop - Print Count Variable")
+    tic = 0
+    while(tic < 10):
+        if tic ==ssn_user:
+            print("tic", tic , "is = to", ssn_user, "your input")
+        else:
+            print(tic)
+        tic += 1
+    
+    print("Ending While Loop")
+    print("Ending Code Challenge")
+
+main()
