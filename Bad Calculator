@@ -1,0 +1,21 @@
+def bad_math(x,y) :
+  z=x*y
+  return z
+
+def main():
+  my_num_1 = 5
+  my_num_2 = 2
+  sum = bad_math(my_num_1, my_num_2)
+  if(sum % 2):
+      sum += 0
+      print("Odd number all good")
+      
+  else:
+       print ("no even numbers!!!")
+       sum += 1
+  print("The sum of", my_num_1, "*", my_num_2, "=",sum)
+  
+
+main()
+
+#this calculator does not like even numbers for some reason... i am sure that fine...right?
