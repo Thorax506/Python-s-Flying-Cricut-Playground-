@@ -1,0 +1,11 @@
+my_list = [1,2,66,4,"5",8,"9",27,'42',100]
+x = 0
+for i in my_list:
+    j = int(i)
+    my_list[x] = j
+    x=x+1
+my_list.sort()
+print(my_list)
+
+
+#i don't why you cant just delete the qoutes and go from there but hey i am just saying.
