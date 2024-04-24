@@ -1,0 +1,25 @@
+import time
+
+def main():
+    print("Starting Chamber project")
+    time.sleep(3.0)
+    bullet = input("Choose witch chamber to put your bullet in from 0 to 9: ")
+    bullet = int(bullet)
+    print(bullet)
+    
+    print("Starting game lets begin.")
+    slot = 0
+    while(slot < 10):
+        if slot ==bullet:
+            print("chamber ",slot , "Was choosen and your Bullet on chamber", bullet, "Has fired and killed the dealer.")
+        else:
+            print(slot)
+            print("Reloading...")
+            time.sleep(1.5)
+            
+        slot += 1
+    
+    print("Dealer is dead")
+    print("You win!")
+
+main()
