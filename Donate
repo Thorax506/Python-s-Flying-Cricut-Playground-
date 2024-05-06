@@ -1,0 +1,13 @@
+import RPi.GPIO as GPIO
+import time
+from time import sleep
+
+GPIO.setwarnings(False)
+debug_messages=1
+if debug_messages : print("Debug Prompt ON")
+else : print("Debug Prompt OFF")
+hardware_test_messages=1
+if hardware_test_messages : print("Hardware Prompt ON")
+else: print("Hardware Prompt OFF")
+
+GPIO.
