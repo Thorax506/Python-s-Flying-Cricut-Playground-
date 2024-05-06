@@ -1,0 +1,58 @@
+#
+import RPi.GPIO as GPIO
+import time
+from time import sleep
+# Debug Settings
+GPIO.setwarnings(False)
+debug_messages = 1 # If debug messages is 1 then message will be printed, else if 0 they will be silenced
+if debug_messages : print("Debug Message are 'ON'")
+else : print("Debug Message are 'OFF'")
+hardware_test_messages = 1 # If debug messages is 1 then message will be printed, else if 0 they will be silenced
+if hardware_test_messages : print("Hardware Test Message are 'ON'")
+else : print("Hardware Test Message are 'OFF'")    
+# Makey Bot Pin Assignments
+GPIO.setmode(GPIO.BOARD) # Note This is specifying the physical pins on the Raspberry Pi Header
+
+redRGBPin = 11
+greenRGBPin = 13
+blueRGBPin = 15
+GPIO.setup(redRGBPin,GPIO.OUT)
+GPIO.setup(greenRGBPin,GPIO.OUT)
+GPIO.setup(blueRGBPin,GPIO.OUT)
+
+
+#choosing a frequency for pwm
+Freq = 1000
+
+#defining the pins that are going to be used with PWM
+REDRGB = GPIO.PWM(redRGBPin, Freq)  
+GREENRGB = GPIO.PWM(greenRGBPin, Freq)
+BLUERGB = GPIO.PWM(blueRGBPin, Freq)
+
+#lighting up the pins. 100 means giving 100% to the pin
+REDRGB.start(1)
+GREENRGB.start(1)
+BLUERGB.start(1)
+
+def rgbCheck(rgb):
+    if hardware_test_messages: print("Rgb=",rgb)
+    rgb = rgb.upper
+    ColorDick= {"RED": "FF:00:00","GREEN": "00:FF:00","BLU": "00:00:FF"}
+    for color,value in ColorDick:
+       print(color)
+       if color == rgb:
+           print(rgb)
+           #figure out how to slice the key value.
+    return rgb
+
+def rgbWrite(r,g,b):
+    REDRGB.ChangeDutyCycle(r) 
+    GREENRGB.ChangeDutyCycle(g) 
+    BLUERGB.ChangeDutyCycle(b)
+    
+    
+def main():
+    rgbWrite(12,15,50) 
+    
+main()
+    
